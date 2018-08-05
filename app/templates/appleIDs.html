@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-striped table-bordered center">
+                <caption><h3 align="center">AppleID列表</h3></caption>
+                <tr class="info">
+                    <th class="center">ID</th>
+                    <th class="center">帐号</th>
+                    <th class="center">密码</th>
+                    <th class="center">状态</th>
+                </tr>
+                <tr ng-repeat="appleID in appleIDs">
+                    <td>{{appleID.id}}</td>
+                    <td>{{appleID.account}}</td>
+                    <td>{{appleID.password}}</td>
+                    <td ng-show="appleID.used"><span class="text-danger">已使用</span></td>
+                    <td ng-show="!appleID.used"><span class="text-success">未使用</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

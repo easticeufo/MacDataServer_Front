@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-striped table-bordered center">
+                <caption><h3 align="center">硬件码列表</h3></caption>
+                <tr class="info">
+                    <th class="center">ID</th>
+                    <th class="center">rom</th>
+                    <th class="center">serialNumber</th>
+                    <th class="center">boardSerialNumber</th>
+                    <th class="center">boardId</th>
+                    <th class="center">productName</th>
+                    <th class="center">状态</th>
+                </tr>
+                <tr ng-repeat="hardwareCode in hardwareCodes">
+                    <td>{{hardwareCode.id}}</td>
+                    <td>{{hardwareCode.rom}}</td>
+                    <td>{{hardwareCode.serialNumber}}</td>
+                    <td>{{hardwareCode.boardSerialNumber}}</td>
+                    <td>{{hardwareCode.boardId}}</td>
+                    <td>{{hardwareCode.productName}}</td>
+                    <td ng-show="hardwareCode.used"><span class="text-danger">已使用</span></td>
+                    <td ng-show="!hardwareCode.used"><span class="text-success">未使用</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

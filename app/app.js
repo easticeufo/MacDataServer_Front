@@ -20,6 +20,21 @@ eastApp.config(["$stateProvider", "$urlRouterProvider",
                 templateUrl: "templates/main.html",
                 controller: "MainController"
             })
+            .state("main.hardwareCodes", {
+                url: "/hardwareCodes",
+                templateUrl: "templates/hardwareCodes.html",
+                controller: "HardwareCodesController"
+            })
+            .state("main.appleIDs", {
+                url: "/appleIDs",
+                templateUrl: "templates/appleIDs.html",
+                controller: "AppleIDsController"
+            })
+            .state("main.phoneNumbers", {
+                url: "/phoneNumbers",
+                templateUrl: "templates/phoneNumbers.html",
+                controller: "PhoneNumbersController"
+            })
             .state("main.import", {
                 url: "/import",
                 templateUrl: "templates/import.html",

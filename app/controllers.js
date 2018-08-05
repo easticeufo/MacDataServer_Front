@@ -30,3 +30,42 @@ appControllers.controller("ImportController", ["$scope", "Upload",
         };
     }
 ]);
+
+appControllers.controller("HardwareCodesController", ["$scope", "ApiHardwareCode",
+    function ($scope, ApiHardwareCode)
+    {
+        $scope.hardwareCodes = ApiHardwareCode.query(
+            function (response) {},
+            function (response)
+            {
+                alert(response.data.returnMsg);
+            }
+        );
+    }
+]);
+
+appControllers.controller("AppleIDsController", ["$scope", "ApiAppleID",
+    function ($scope, ApiAppleID)
+    {
+        $scope.appleIDs = ApiAppleID.query(
+            function (response) {},
+            function (response)
+            {
+                alert(response.data.returnMsg);
+            }
+        );
+    }
+]);
+
+appControllers.controller("PhoneNumbersController", ["$scope", "ApiPhoneNumber",
+    function ($scope, ApiPhoneNumber)
+    {
+        $scope.phoneNumbers = ApiPhoneNumber.query(
+            function (response) {},
+            function (response)
+            {
+                alert(response.data.returnMsg);
+            }
+        );
+    }
+]);

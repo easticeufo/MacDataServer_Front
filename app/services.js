@@ -17,3 +17,21 @@ restfulApiService.config(["$resourceProvider",
         };
     }
 ]);
+
+restfulApiService.factory("ApiHardwareCode", ["$resource",
+    function ($resource) {
+        return $resource(testServerAddr + "api/hardwareCodes/:hardwareCodeId", {hardwareCodeId:"@id"}, null);
+    }
+]);
+
+restfulApiService.factory("ApiAppleID", ["$resource",
+    function ($resource) {
+        return $resource(testServerAddr + "api/appleIDs/:appleIDId", {appleIDId:"@id"}, null);
+    }
+]);
+
+restfulApiService.factory("ApiPhoneNumber", ["$resource",
+    function ($resource) {
+        return $resource(testServerAddr + "api/phoneNumbers/:phoneNumberId", {phoneNumberId:"@id"}, null);
+    }
+]);
