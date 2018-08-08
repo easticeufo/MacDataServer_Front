@@ -16,4 +16,10 @@
             </table>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <ul uib-pagination ng-change="pageChanged()" total-items="totalItems" ng-model="currentPage"  items-per-page="size" max-size="15" boundary-link-numbers="true" class="pagination-sm" previous-text="上一页" next-text="下一页"></ul>
+        </div>
+    </div>
 </div>

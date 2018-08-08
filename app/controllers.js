@@ -60,12 +60,29 @@ appControllers.controller("AppleIDsController", ["$scope", "ApiAppleID",
 appControllers.controller("PhoneNumbersController", ["$scope", "ApiPhoneNumber",
     function ($scope, ApiPhoneNumber)
     {
-        $scope.phoneNumbers = ApiPhoneNumber.query(
-            function (response) {},
-            function (response)
-            {
-                alert(response.data.returnMsg);
-            }
-        );
+        $scope.size = 100; // 每页的记录数
+        $scope.currentPage = 1; // 当前页,从1开始
+
+        $scope.pageChanged = function ()
+        {
+            ApiPhoneNumber.get(
+                {
+                    size: $scope.size,
+                    page: $scope.currentPage - 1
+                },
+                function (data)
+                {
+                    $scope.totalItems = data.totalElements; // 总记录数
+                    $scope.phoneNumbers = data.content;
+                },
+                function (response)
+                {
+                    alert(response.data.returnMsg);
+                }
+            );
+        };
+
+        $scope.pageChanged();
+
     }
 ]);
